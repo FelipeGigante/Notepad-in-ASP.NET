@@ -1,0 +1,32 @@
+﻿@model BlocoDeNotas.Models.Entidades.Caderno
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Criar Nota</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Texto" class="control-label"></label>
+                <textarea asp-for="Texto" class="form-control" > </textarea>
+                <span asp-validation-for="Texto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar ao Menu</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

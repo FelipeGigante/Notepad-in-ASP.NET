@@ -1,0 +1,22 @@
+﻿@model BlocoDeNotas.Models.Entidades.Caderno
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Voltar ao Menu</a>
+</div>

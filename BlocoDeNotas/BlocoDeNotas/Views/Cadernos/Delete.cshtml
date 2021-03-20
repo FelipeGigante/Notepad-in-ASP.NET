@@ -1,0 +1,25 @@
+﻿@model BlocoDeNotas.Models.Entidades.Caderno
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Você tem certeza que quer deletar essa nota?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Deletar" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar ao Menu</a>
+    </form>
+</div>

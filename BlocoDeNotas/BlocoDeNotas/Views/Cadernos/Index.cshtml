@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BlocoDeNotas.Models.Entidades.Caderno>
+
+@{
+    ViewData["Title"] = "Bloco de Notas";
+}
+
+<h2>Bloco de Notas</h2>
+<br />
+
+<p>
+    <a asp-action="Create" style="background-color:blue; color:white; padding:6px; border-radius:4px">Adicionar Nota</a>
+</p>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Texto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Texto)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id}) 
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id}) 
+                @Html.ActionLink("Deletar", "Delete", new { id = item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
